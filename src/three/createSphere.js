@@ -1,12 +1,17 @@
-import { Mesh, MeshPhongMaterial, SphereGeometry } from 'three';
+import * as THREE from 'three';
 
+// SPHERE
 const heightSegments = 24;
 const radius = 20;
 const widthSegments = 24;
 
-export default () => {
-  const geometry = new SphereGeometry(radius, widthSegments, heightSegments);
-  const material = new MeshPhongMaterial({ color: 0x758c69, flatShading: true });
+// LINE
+const color = 0x758c69;
 
-  return new Mesh(geometry, material);
+export default () => {
+  const geometry = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
+  const wireframe = new THREE.WireframeGeometry(geometry);
+  const material = new THREE.LineBasicMaterial({ color });
+
+  return new THREE.LineSegments(wireframe, material);
 };
