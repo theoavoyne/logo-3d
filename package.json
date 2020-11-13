@@ -14,7 +14,9 @@
     "dev-server": "webpack-dev-server --env.env=development"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "lodash.debounce": "^4.0.8",
+    "normalize.css": "^8.0.1",
+    "three": "^0.122.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
